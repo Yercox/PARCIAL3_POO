@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Silenciar completamente MongoDB -->
+    <logger name="org.mongodb.driver" level="OFF" />
+
+    <!-- Silenciar MongoDB específicamente -->
+    <logger name="org.mongodb.driver.cluster" level="OFF" />
+    <logger name="org.mongodb.driver.connection" level="OFF" />
+    <logger name="org.mongodb.driver.client" level="OFF" />
+
+    <!-- Nuestra aplicación -->
+    <logger name="com.espe" level="INFO" />
+
+    <!-- Appender para consola -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern> <!-- Solo mensaje, sin fecha/tiempo -->
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
